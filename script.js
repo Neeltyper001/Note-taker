@@ -13,8 +13,9 @@ add.addEventListener('click', add_fun)
 cancel.addEventListener('click', cancel_fun)
 
 function display_fun() {
+  let updatedStr = ``;
   if (localStorage.length == 0) {
-    document.getElementById('main-container').innerHTML += `    
+      updatedStr = `    
         Click on 'create' to add some notes
         `
     document.getElementById('main-container').style.cssText += `
@@ -26,16 +27,18 @@ function display_fun() {
 
   else {
     for (let i = 0; i < localStorage.length; i++) {
-      document.getElementById('main-container').innerHTML += `    
+      updatedStr += `    
       <div class="note-cards">
         <p>
         ${localStorage.getItem(i)}
         </p>
+        <button onclick="localStorage.removeItem(${i}); display_fun();">remove</button>
       </div>
     `
     }
   }
-}
+    document.getElementById('main-container').innerHTML = updatedStr;
+}  // for displaying when web-page reloads
 
 function counter_fun() {
   let local_counter = 0;
@@ -53,12 +56,12 @@ function counter_fun() {
     }
   }
   return local_counter;
-}
+}  // for counting the number of index
 
 function create_fun() {
 
   document.getElementById('note-taker').style.visibility = "visible";
-}
+}  // for generating a popup box in which you can write your short notes
 
 function clear_fun() {
   let decision = confirm("Do you wish to delete it??")
@@ -67,41 +70,47 @@ function clear_fun() {
     document.getElementById('main-container').innerHTML = `
      Click on 'create' to add some notes
   `
+        document.getElementById('main-container').style.cssText += `
+      font-size: 34px;
+      font-weight: bold;
+      text-align: center;
+      `
   }
-}
+}  // for clearing the all contents present in your note
 
 function add_fun() {
   var counter = counter_fun();
   let input = document.getElementById('note-field').value;
   localStorage.setItem(counter, input)
+  display_fun();
+  // if (flag) {
+  //   document.getElementById('main-container').innerHTML = `    
+  //   <div class="note-cards">
+  //     <p>
+  //     ${input}
+  //     </p>
+  //   </div>
+  //   `
+  // }
 
-  if (flag) {
-    document.getElementById('main-container').innerHTML = `    
-    <div class="note-cards">
-      <p>
-      ${input}
-      </p>
-    </div>
-    `
-  }
+  // else {
 
-  else {
-
-    document.getElementById('main-container').innerHTML += `    
-    <div class="note-cards">
-      <p>
-      ${input}
-      </p>
-    </div>
-    `
-  }
+  //   document.getElementById('main-container').innerHTML += `    
+  //   <div class="note-cards">
+  //     <p>
+  //     ${input}
+  //     </p>
+      
+  //   </div>
+  //   `
+  // }
   document.getElementById('note-taker').style.visibility = "hidden";
-}
+}    // for adding the shortnote to your webpage
 
 function cancel_fun() {
   document.getElementById('note-field').value = "";
   document.getElementById('note-taker').style.visibility = "hidden";
-}
+}    // for cancel the operation
 
 
 
