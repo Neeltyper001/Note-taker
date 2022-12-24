@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Notetaker</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <h1>Welcome to the note-taking app!!</h1>
+      <p>Make some notes, save it and use it!!</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="main-btns-collector">
+          <button class="main-btns" id="create-btn">Create</button>
+          <button class="main-btns" id="clear-btn">Clear</button>
+    </div>
+    <div id="main-container">
+
+    </div>
+    
+
+    <div id="note-taker">
+      <!--   we will use the property of visibility: hidden (still takes up the space) , display: none  , positioning will be absolute -->
+      <label for="note-field">Enter the description</label>
+      <br>
+      <input type="text" id="note-field" placeholder="write your note here"></input>
+      <br>
+
+      <div class="popup-btns-collector">      
+        <button class="popup-btns" id="add-btn">Add</button>
+        <button class="popup-btns" id="cancel-btn">Cancel</button>
+      </div>
+    </div>
+
+
+
+  </main>
+
+  <footer>
+
+  </footer>
+  <script src="script.js"></script>
+
+  <!--
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink!
+  -->
+  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
+</body>
+
+</html>
