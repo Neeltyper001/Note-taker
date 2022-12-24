@@ -15,7 +15,7 @@ cancel.addEventListener('click', cancel_fun)
 function display_fun() {
   let updatedStr = ``;
   if (localStorage.length == 0) {
-      updatedStr = `    
+    updatedStr = `    
         Click on 'create' to add some notes
         `
     document.getElementById('main-container').style.cssText += `
@@ -32,12 +32,12 @@ function display_fun() {
         <p>
         ${localStorage.getItem(i)}
         </p>
-        <button onclick="localStorage.removeItem(${i}); display_fun();">remove</button>
+        <button class="remove-btns" onclick="localStorage.removeItem(${i}); display_fun();">remove</button>
       </div>
     `
     }
   }
-    document.getElementById('main-container').innerHTML = updatedStr;
+  document.getElementById('main-container').innerHTML = updatedStr;
 }  // for displaying when web-page reloads
 
 function counter_fun() {
@@ -70,7 +70,7 @@ function clear_fun() {
     document.getElementById('main-container').innerHTML = `
      Click on 'create' to add some notes
   `
-        document.getElementById('main-container').style.cssText += `
+    document.getElementById('main-container').style.cssText += `
       font-size: 34px;
       font-weight: bold;
       text-align: center;
@@ -100,7 +100,7 @@ function add_fun() {
   //     <p>
   //     ${input}
   //     </p>
-      
+
   //   </div>
   //   `
   // }
