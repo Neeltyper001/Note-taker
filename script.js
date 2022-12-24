@@ -4,79 +4,79 @@ let add = document.getElementById('add-btn');
 let cancel = document.getElementById('cancel-btn');
 
 var flag = false;
-var counter = counter_fun();
+
 display_fun();
 
-createbtn.addEventListener('click',create_fun)
-clearbtn.addEventListener('click',clear_fun)
-add.addEventListener('click',add_fun)
-cancel.addEventListener('click',cancel_fun)
+createbtn.addEventListener('click', create_fun)
+clearbtn.addEventListener('click', clear_fun)
+add.addEventListener('click', add_fun)
+cancel.addEventListener('click', cancel_fun)
 
-function display_fun(){
-    if(localStorage.length == 0){
-        document.getElementById('main-container').innerHTML += `    
+function display_fun() {
+  if (localStorage.length == 0) {
+    document.getElementById('main-container').innerHTML += `    
         Click on 'create' to add some notes
         `
-      document.getElementById('main-container').style.cssText += `
+    document.getElementById('main-container').style.cssText += `
       font-size: 34px;
       font-weight: bold;
       text-align: center;
       `
-    }
+  }
 
-  else{
-      for(let i=0; i<localStorage.length; i++){
-          document.getElementById('main-container').innerHTML += `    
+  else {
+    for (let i = 0; i < localStorage.length; i++) {
+      document.getElementById('main-container').innerHTML += `    
       <div class="note-cards">
         <p>
         ${localStorage.getItem(i)}
         </p>
       </div>
     `
-      }
+    }
   }
 }
 
-function counter_fun(){
+function counter_fun() {
   let local_counter = 0;
-  
-    if (localStorage.length == 0) {
-      flag = true;
-      return local_counter;
-    }
 
-  else{ 
-    
-    for(let j=0;j<=localStorage.length; j++){
+  if (localStorage.length == 0) {
+    flag = true;
+    return local_counter;
+  }
+
+  else {
+
+    for (let j = 0; j <= localStorage.length; j++) {
       flag = false;
       local_counter = j;
-    } 
+    }
   }
   return local_counter;
 }
 
-function create_fun(){
-  
+function create_fun() {
+
   document.getElementById('note-taker').style.visibility = "visible";
 }
 
-function clear_fun(){
+function clear_fun() {
   let decision = confirm("Do you wish to delete it??")
-  if(decision){
-      localStorage.clear();
-  document.getElementById('main-container').innerHTML = `
+  if (decision) {
+    localStorage.clear();
+    document.getElementById('main-container').innerHTML = `
      Click on 'create' to add some notes
   `
   }
 }
 
-function add_fun(){
-  
+function add_fun() {
+  var counter = counter_fun();
   let input = document.getElementById('note-field').value;
-  localStorage.setItem(counter,input)
+  localStorage.setItem(counter, input)
 
-  if(flag){
-      document.getElementById('main-container').innerHTML = `    
+  if (flag) {
+    document.getElementById('main-container').innerHTML = `    
     <div class="note-cards">
       <p>
       ${input}
@@ -85,9 +85,9 @@ function add_fun(){
     `
   }
 
-  else{
-    
-  document.getElementById('main-container').innerHTML += `    
+  else {
+
+    document.getElementById('main-container').innerHTML += `    
     <div class="note-cards">
       <p>
       ${input}
@@ -98,9 +98,9 @@ function add_fun(){
   document.getElementById('note-taker').style.visibility = "hidden";
 }
 
-function cancel_fun(){
-   document.getElementById('note-field').value = "";
-   document.getElementById('note-taker').style.visibility = "hidden";
+function cancel_fun() {
+  document.getElementById('note-field').value = "";
+  document.getElementById('note-taker').style.visibility = "hidden";
 }
 
 
