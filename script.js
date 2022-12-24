@@ -2,8 +2,13 @@ let createbtn = document.getElementById('create-btn')
 let clearbtn = document.getElementById('clear-btn');
 let add = document.getElementById('add-btn');
 let cancel = document.getElementById('cancel-btn');
+let duplicate_btn = document.getElementsByClassName('duplicate-btn')[0];
+let empty_btn = document.getElementsByClassName('empty-btn')[0];
+let clear_it_btn = document.getElementsByClassName('clear-btns')[0];
+let clear_not_btn = document.getElementsByClassName('clear-btns')[1];
 
 var flag = false;
+let prvInput = "";
 
 display_fun();
 
@@ -11,6 +16,10 @@ createbtn.addEventListener('click', create_fun)
 clearbtn.addEventListener('click', clear_fun)
 add.addEventListener('click', add_fun)
 cancel.addEventListener('click', cancel_fun)
+duplicate_btn.addEventListener('click',duplicate_ok);
+empty_btn.addEventListener('click',empty_ok);
+clear_it_btn.addEventListener('click',clear_It);
+clear_not_btn.addEventListener('click',clear_Not);
 
 function display_fun() {
   let updatedStr = ``;
@@ -64,8 +73,10 @@ function create_fun() {
 }  // for generating a popup box in which you can write your short notes
 
 function clear_fun() {
-  let decision = confirm("Do you wish to delete it??")
-  if (decision) {
+    document.getElementById('clearBox').style.visibility = "visible";
+  } 
+    
+  function clear_It(){  
     localStorage.clear();
     document.getElementById('main-container').innerHTML = `
      Click on 'create' to add some notes
@@ -75,36 +86,43 @@ function clear_fun() {
       font-weight: bold;
       text-align: center;
       `
+    document.getElementById('clearBox').style.visibility = "hidden";
+}
+
+  function clear_Not(){
+    document.getElementById('clearBox').style.visibility = "hidden";
   }
-}  // for clearing the all contents present in your note
+
+  
+ // for clearing the all contents present in your note
 
 function add_fun() {
+  let passKey;
   var counter = counter_fun();
   let input = document.getElementById('note-field').value;
-  localStorage.setItem(counter, input)
-  display_fun();
-  // if (flag) {
-  //   document.getElementById('main-container').innerHTML = `    
-  //   <div class="note-cards">
-  //     <p>
-  //     ${input}
-  //     </p>
-  //   </div>
-  //   `
-  // }
 
-  // else {
+  if(prvInput == input){
+    passKey = duplicate_fun() ;
+  }
 
-  //   document.getElementById('main-container').innerHTML += `    
-  //   <div class="note-cards">
-  //     <p>
-  //     ${input}
-  //     </p>
+  if(input == ""){
+    passKey = empty_fun();
+  }
 
-  //   </div>
-  //   `
-  // }
-  document.getElementById('note-taker').style.visibility = "hidden";
+  switch(passKey){
+
+    case "duplicate":  document.getElementById('duplicate-warning').style.visibility = "visible";
+                        break;
+  
+    case "empty":  document.getElementById('empty-warning').style.visibility = "visible";
+                    break;
+      
+    default:        localStorage.setItem(counter, input)
+                    display_fun();
+                    document.getElementById('note-taker').style.visibility = "hidden";
+  }
+
+  prvInput = input;
 }    // for adding the shortnote to your webpage
 
 function cancel_fun() {
@@ -112,7 +130,21 @@ function cancel_fun() {
   document.getElementById('note-taker').style.visibility = "hidden";
 }    // for cancel the operation
 
+function duplicate_fun(){
+  return "duplicate";
+}
 
+function duplicate_ok(){
+  document.getElementById('duplicate-warning').style.visibility = "hidden";
+}
+
+function empty_fun(){
+  return "empty";
+}
+
+function empty_ok(){
+  document.getElementById('empty-warning').style.visibility = "hidden";
+}
 
 
 

@@ -13,6 +13,8 @@ header {
   background: linear-gradient(90deg, rgba(47,193,133,1) 21%, rgba(0,255,209,1) 69%);
   text-align: center;
   padding: 5% 0;
+  font-size:30px;
+  font-weight:bold;
 }
 
 header p{
@@ -76,9 +78,11 @@ footer{
 #note-taker{
   width:25%;
   height: 25%;
+  padding:2%;
   border-radius: 2rem;
   background: radial-gradient(circle, rgba(0,255,147,1) 62%, rgba(250,250,250,1) 100%);
   visibility: hidden;
+  display: none;
   position: sticky;
   display: flex;
   flex-direction: column;
@@ -123,4 +127,112 @@ footer{
     border-radius: 2rem;
     color: white;
     background-color: red;
+}
+
+#duplicate-warning{
+  width:25%;
+  height: 25%;
+  padding:2%;
+  border-radius: 2rem;
+  background: radial-gradient(circle, rgba(0,255,147,1) 62%, rgba(250,250,250,1) 100%);
+  visibility: hidden;
+  display: none;
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid orange;
+  bottom: 30%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  justify-content: center;
+  align-items: center;
+}
+
+#duplicate-warning  label{
+       font-size: 32px;
+    font-weight: bold;
+}
+
+#duplicate-warning .duplicate-btn{
+    width: 13%;
+    height: 13%;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 1rem;
+    margin-top: 2%;
+}
+
+
+#empty-warning{
+  width:25%;
+  height: 25%;
+  padding: 2%;
+  border-radius: 2rem;
+  background: radial-gradient(circle, rgba(0,255,147,1) 62%, rgba(250,250,250,1) 100%);
+  visibility: hidden;
+  display:none;
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid orange;
+  bottom: 30%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  justify-content: center;
+  align-items: center;
+}
+
+#empty-warning label{
+      font-size: 32px;
+    font-weight: bold;
+}
+
+#empty-warning .empty-btn{
+    width: 13%;
+    height: 13%;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 1rem;
+    margin-top: 2%;
+}
+
+#clearBox{
+         width:25%;
+        height: 25%;
+        padding: 2%;
+        border-radius: 2rem;
+        background: radial-gradient(circle, rgba(0,255,147,1) 62%, rgba(250,250,250,1) 100%);
+        visibility: hidden;
+        display: none;
+        position: sticky;
+        display: flex;
+        flex-direction: column;
+        border: 2px solid orange;
+        bottom: 30%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        justify-content: center;
+        align-items: center;
+}
+
+#clearBox label{
+    font-size: 27px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#clearBox .clear-btn-container{
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#clearBox .clear-btns{
+    width: 40%;
+    height: 13%;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 1rem;
+    margin-top: 2%;
 }
