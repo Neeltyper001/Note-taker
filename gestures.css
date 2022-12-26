@@ -1,0 +1,23 @@
+.main-btns:hover {
+  cursor: pointer;
+}
+
+#note-taker .popup-btns{
+  cursor: pointer;
+}
+
+#duplicate-warning .duplicate-btn{
+  cursor: pointer;
+}
+
+#empty-warning .empty-btn{
+  cursor: pointer;
+}
+
+.note-cards .remove-btns{
+  cursor: pointer;
+}
+
+#clearBox .clear-btns{
+  cursor: pointer;
+}

@@ -1,0 +1,328 @@
+@media screen  and (max-width: 1024px){
+
+  .main-btns-collector{
+    width: 30%;
+  }
+
+  .note-cards {
+    font-size: 14px;  
+  }
+
+  #note-taker {
+    width: 44%;
+  }
+
+  #clearBox{
+    width: 40%;
+  }
+
+  #empty-warning{
+    width: 40%;  
+  }
+
+  #empty-warning label{
+    text-align: center;
+  }
+}
+
+@media screen  and (max-width: 768px){
+
+#main-container{
+  width:70%;
+}
+
+  .main-btns-collector{
+    width:40%;
+  }
+
+#main-container .note-cards{
+  width: 88%;
+}
+
+  header{
+    font-size: 23px;
+  }
+
+  header p{
+    font-size: 27px;
+  }
+
+  #note-taker{
+    width: 48%;
+  }
+
+  .note-cards .remove-btns{
+    width: 20%;
+  }
+
+  #clearBox{
+    width: 48%;
+    transform: translate(-50%, -72%);
+  }
+
+  #clearBox label{
+    font-size: 25px;
+  }
+
+  #empty-warning{
+    width: 48%;
+  }
+
+  #duplicate-warning {
+    width:48%;
+    transofrm: translate(-50% , -168%);
+  }
+  
+  #clearBox .clear-btn-container{
+    width: 40%;
+  }
+}
+
+@media screen  and (max-width: 425px){
+  
+  header{
+    font-size: 16px;
+  }
+
+  header p{
+    font-size: 23px;
+  }
+
+
+#main-container p{
+  font-size: 26px;
+  
+}
+
+  .main-btns-collector{
+    width:70%;
+    margin-top: 5%;
+  }
+
+#main-container .note-cards{
+  width: 85%;
+  font-size: 22px;
+  margin: 8% auto;
+}
+
+
+  #note-taker label{
+    font-size: 26px;
+    text-align: center;
+  }
+
+  #note-taker input{
+    font-size: 17px;
+  }
+
+  #note-taker .popup-btn-collector{
+    width: 60%;  
+  }
+  
+  .popup-btns-collector .popup-btn{
+    margin-right: 2%;
+  }
+
+  .note-cards .remove-btns{
+    width: 31%;
+    font-size:16px;
+  }
+
+  #duplicate-warning {
+    transform: translate(-50%,-100%);
+  }
+
+  #duplicate-warning label{
+    font-size: 26px;
+    text-align: center;
+  }
+
+  #duplicate-warning .duplicate-btn{
+    width:23%;
+    margin-top:6%;
+  }
+  
+  #empty-warning{
+    transform: translate(-50%,-110%);
+  }
+    
+  #empty-warning label{
+    font-size: 23px;
+  }
+
+  #empty-warning .empty-btn{
+    margin-top:6%;
+  }
+    
+  
+  #clearBox{
+    width: 48%;
+    transform: translate(-50%, -110%);
+  }
+
+  #clearBox label{
+    font-size: 25px;
+  }
+
+  #empty-warning{
+    width: 48%;
+  }
+
+  #duplicate-warning {
+    width:48%;
+    transofrm: translate(-50% , -168%);
+  }
+  
+  #clearBox .clear-btn-container{
+    width: 58%;
+  }
+
+  #clearBox .clear-btns{
+    font-size: 18px;
+    width: 48px;
+  }
+}
+
+@media screen  and (max-width: 375px){
+  
+  header{
+    font-size: 14px;
+  }
+
+  header p{
+    font-size: 20px;
+  }
+
+
+  .main-btns-collector{
+    width:75%;
+  }
+
+#main-container .note-cards{
+  font-size: 19px;
+}
+
+
+  #note-taker label{
+    font-size: 26px;
+    text-align: center;
+  }
+
+  #note-taker input{
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+#note-taker .popup-btns-collector{
+  width:60%;
+}
+  
+  .popup-btns-collector .popup-btns{
+    font-size: 15px;
+  }
+
+ #main-container .note-cards p{
+    font-size: 20px;
+  }
+
+  .note-cards .remove-btns{
+    width: 33%;
+    font-size:12px;
+  }
+
+  #duplicate-warning {
+    transform: translate(-50%,-127%);
+  }
+
+  #duplicate-warning label{
+    font-size: 24px;
+
+  }
+
+  #duplicate-warning .duplicate-btn{
+    font-size:24px;
+
+  }
+  
+  #duplicate-warning {
+    width:48%;
+    transofrm: translate(-50% , -168%);
+  }
+  
+  #empty-warning{
+    transform: translate(-50%,-199%);
+  }
+    
+  #empty-warning label{
+    font-size: 21px;
+  }
+
+  #empty-warning .empty-btn{
+    width:23%;
+    font-size:19px;
+  }
+    
+  
+  #clearBox{
+    transform: translate(-50%, -199%);
+  }
+
+  #clearBox label{
+    font-size: 20px;
+  }
+  
+  
+  #clearBox .clear-btn-container{
+    width: 64%;
+  }
+
+}
+
+@media screen  and (max-width: 320px){
+  header p{
+    font-size: 18px;
+  }
+
+  .main-btns-collector .main-btns{
+    width: 27%;
+    font-size: 17px;
+  }
+
+  #note-taker input{
+    font-size: 12px;
+  }
+
+  #main-container p{
+    font-size: 18px;
+  }
+
+  #empty-warning label{
+    font-size: 18px;
+  }
+
+  #clearBox{
+    padding: 8%;
+    transform: translate(-29% , -154%);
+  }
+
+  #clearBox label{
+    font-size: 19px;
+  }
+
+  #clearBox .clear-btns{
+    font-size: 15px;
+  }
+
+  #duplicate-warning {
+    transform: translate(-50%, -192%);
+  }
+
+  #duplicate-warning .duplicate-btn{
+    font-size: 16px;
+  }
+
+  #duplicate-warning label{
+    font-size: 22px;
+  }
+}
+

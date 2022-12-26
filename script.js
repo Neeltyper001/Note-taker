@@ -25,7 +25,7 @@ function display_fun() {
   let updatedStr = ``;
   if (localStorage.length == 0) {
     updatedStr = `    
-        Click on 'create' to add some notes
+        <p>Click on 'create' to add some notes</p>
         `
     document.getElementById('main-container').style.cssText += `
       font-size: 34px;
@@ -79,7 +79,7 @@ function clear_fun() {
   function clear_It(){  
     localStorage.clear();
     document.getElementById('main-container').innerHTML = `
-     Click on 'create' to add some notes
+     <p>Click on 'create' to add some notes</p>
   `
     document.getElementById('main-container').style.cssText += `
       font-size: 34px;
