@@ -88,13 +88,11 @@ function clear_It() {
       `
   document.getElementById('clearBox').style.visibility = "hidden";
 }
+// for clearing all the contents present in your note
 
 function clear_Not() {
   document.getElementById('clearBox').style.visibility = "hidden";
 }
-
-
-// for clearing the all contents present in your note
 
 function add_fun() {
   let passKey;
@@ -124,7 +122,6 @@ function add_fun() {
       document.getElementById('note-taker').style.visibility = "hidden";
   }
 
-  // prvInput = input;
 }    // for adding the shortnote to your webpage
 
 function cancel_fun() {
@@ -144,52 +141,20 @@ function duplicate_check(input) {
   }
 
   return isDuplicate;
-}
+}  // to check whether the input you have filled is actually the duplicate one or not
 
 function duplicate_fun() {
-  return "duplicate";
-}
+  return "duplicate";        // to return the duplicate indication to the pass key
+}        // for returning the duplicate indication to the pass key
 
 function duplicate_ok() {
   document.getElementById('duplicate-warning').style.visibility = "hidden";
-}
+}        // for showing the simple 'duplicate content' message dialogue box 
 
 function empty_fun() {
   return "empty";
-}
+}      // for returning the empty indication to the pass key
 
 function empty_ok() {
   document.getElementById('empty-warning').style.visibility = "hidden";
-}
-
-
-
-
-// function checker() {
-//   if (localStorage.length == 0) {
-//     console.log('No item in the storage')
-//   }
-
-//   else {
-//     for (let i = 0; i < localStorage.length; i++) {
-//       console.log(`${localStorage.key(i)} with value: ${localStorage.getItem(localStorage.key(i))}`)
-//     }
-//   }
-
-// }
-
-// checker()
-
-// for (let i = 0; i < 4; i++) {
-
-//   let val = prompt("Enter the value");
-//   localStorage.setItem(i, val);
-// }
-
-// let ks = Object.keys(localStorage)
-// let vals = Object.values(localStorage)
-
-// ks.forEach((ks_item) => {
-//   console.log(`keys: ${ks_item} values: ${localStorage.getItem(ks_item)}`)
-// })
-
+}      // for showing the simple 'empty content' message dialogue box 
