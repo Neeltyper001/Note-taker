@@ -70,7 +70,7 @@
 
   #duplicate-warning {
     width:48%;
-    transofrm: translate(-50% , -168%);
+    transform: translate(-50% , -168%);
   }
   
   #clearBox .clear-btn-container{
