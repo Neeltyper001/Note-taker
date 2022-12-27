@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width">
   <title>Notetaker</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
-  <link href="responsive.css" rel="stylesheet" type="text/css"/>
-  <link href="gestures.css" rel="stylesheet" type="text/css"/>
+  <link href="responsive.css" rel="stylesheet" type="text/css" />
+  <link href="gestures.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -21,64 +21,57 @@
 
   <main>
     <div class="main-btns-collector">
-          <button class="main-btns" id="create-btn">Create</button>
-          <button class="main-btns" id="clear-btn">Clear</button>
+      <button class="main-btns" id="create-btn">Create</button>
+      <button class="main-btns" id="clear-btn">Clear</button>
     </div>
     <div id="main-container">
 
     </div>
-    
+
 
     <div id="note-taker">
-      <!--   we will use the property of visibility: hidden (still takes up the space) , display: none  , positioning will be absolute -->
       <label for="note-field">Enter the description</label>
       <br>
       <input type="text" id="note-field" placeholder="write your note here"></input>
       <br>
 
-      <div class="popup-btns-collector">      
+      <div class="popup-btns-collector">
         <button class="popup-btns" id="add-btn">Add</button>
         <button class="popup-btns" id="cancel-btn">Cancel</button>
       </div>
     </div>
 
-     <div id="duplicate-warning">
-          <label>Item already included</label>          
-            <button class="duplicate-btn">Ok</button>          
-     </div>
+    <div id="duplicate-warning">
+      <label>Item already included</label>
+      <button class="duplicate-btn">Ok</button>
+    </div>
 
-      <div id="empty-warning">
-          <label>Empty Content cannot be added!!</label>
-          <button class="empty-btn">Ok</button>
-     </div>
+    <div id="empty-warning">
+      <label>Empty Content cannot be added!!</label>
+      <button class="empty-btn">Ok</button>
+    </div>
 
     <div id="clearBox">
-            <label>This will delete all the notes. Do you want to clear it ??</label> 
-      
-        <div class="clear-btn-container">
-            <button class="clear-btns">Yes</button>
-            <button class="clear-btns">No</button>          
-        </div>
+      <label>This will delete all the notes. Do you want to clear it ??</label>
+
+      <div class="clear-btn-container">
+        <button class="clear-btns">Yes</button>
+        <button class="clear-btns">No</button>
+      </div>
     </div>
 
   </main>
 
   <footer>
     <a href="https://github.com/Neeltyper001">
-    <div class="credits">
-      <p>Made by Neeltyper001</p>
-      <i class="fa fa-github" style="font-size:36px"></i>
-    </div>
+      <div class="credits">
+        <p>Made by Neeltyper001</p>
+        <i class="fa fa-github" style="font-size:36px"></i>
+      </div>
     </a>
   </footer>
   <script src="script.js"></script>
 
-  <!--
-  This script places a badge on your repl's full-browser view back to your repl's cover
-  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
-  teal, blue, blurple, magenta, pink!
-  -->
-  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
 </body>
 
 </html>
