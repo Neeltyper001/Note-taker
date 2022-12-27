@@ -8,7 +8,7 @@ let clear_it_btn = document.getElementsByClassName('clear-btns')[0];
 let clear_not_btn = document.getElementsByClassName('clear-btns')[1];
 
 var flag = false;
-let prvInput = "";
+let prvInput;
 
 display_fun();
 
@@ -16,10 +16,10 @@ createbtn.addEventListener('click', create_fun)
 clearbtn.addEventListener('click', clear_fun)
 add.addEventListener('click', add_fun)
 cancel.addEventListener('click', cancel_fun)
-duplicate_btn.addEventListener('click',duplicate_ok);
-empty_btn.addEventListener('click',empty_ok);
-clear_it_btn.addEventListener('click',clear_It);
-clear_not_btn.addEventListener('click',clear_Not);
+duplicate_btn.addEventListener('click', duplicate_ok);
+empty_btn.addEventListener('click', empty_ok);
+clear_it_btn.addEventListener('click', clear_It);
+clear_not_btn.addEventListener('click', clear_Not);
 
 function display_fun() {
   let updatedStr = ``;
@@ -73,56 +73,58 @@ function create_fun() {
 }  // for generating a popup box in which you can write your short notes
 
 function clear_fun() {
-    document.getElementById('clearBox').style.visibility = "visible";
-  } 
-    
-  function clear_It(){  
-    localStorage.clear();
-    document.getElementById('main-container').innerHTML = `
+  document.getElementById('clearBox').style.visibility = "visible";
+}
+
+function clear_It() {
+  localStorage.clear();
+  document.getElementById('main-container').innerHTML = `
      <p>Click on 'create' to add some notes</p>
   `
-    document.getElementById('main-container').style.cssText += `
+  document.getElementById('main-container').style.cssText += `
       font-size: 34px;
       font-weight: bold;
       text-align: center;
       `
-    document.getElementById('clearBox').style.visibility = "hidden";
+  document.getElementById('clearBox').style.visibility = "hidden";
 }
 
-  function clear_Not(){
-    document.getElementById('clearBox').style.visibility = "hidden";
-  }
+function clear_Not() {
+  document.getElementById('clearBox').style.visibility = "hidden";
+}
 
-  
- // for clearing the all contents present in your note
+
+// for clearing the all contents present in your note
 
 function add_fun() {
   let passKey;
   var counter = counter_fun();
   let input = document.getElementById('note-field').value;
 
-  if(prvInput == input){
-    passKey = duplicate_fun() ;
+  prvInput = duplicate_check(input);
+
+  if (prvInput) {
+    passKey = duplicate_fun();
   }
 
-  if(input == ""){
+  if (input == "") {
     passKey = empty_fun();
   }
 
-  switch(passKey){
+  switch (passKey) {
 
-    case "duplicate":  document.getElementById('duplicate-warning').style.visibility = "visible";
-                        break;
-  
-    case "empty":  document.getElementById('empty-warning').style.visibility = "visible";
-                    break;
-      
-    default:        localStorage.setItem(counter, input)
-                    display_fun();
-                    document.getElementById('note-taker').style.visibility = "hidden";
+    case "duplicate": document.getElementById('duplicate-warning').style.visibility = "visible";
+      break;
+
+    case "empty": document.getElementById('empty-warning').style.visibility = "visible";
+      break;
+
+    default: localStorage.setItem(counter, input)
+      display_fun();
+      document.getElementById('note-taker').style.visibility = "hidden";
   }
 
-  prvInput = input;
+  // prvInput = input;
 }    // for adding the shortnote to your webpage
 
 function cancel_fun() {
@@ -130,19 +132,33 @@ function cancel_fun() {
   document.getElementById('note-taker').style.visibility = "hidden";
 }    // for cancel the operation
 
-function duplicate_fun(){
+function duplicate_check(input) {
+
+  let isDuplicate = false;
+
+  for (allKeys in localStorage) {
+
+    if (localStorage[allKeys] == input) {
+      isDuplicate = true;
+    }
+  }
+
+  return isDuplicate;
+}
+
+function duplicate_fun() {
   return "duplicate";
 }
 
-function duplicate_ok(){
+function duplicate_ok() {
   document.getElementById('duplicate-warning').style.visibility = "hidden";
 }
 
-function empty_fun(){
+function empty_fun() {
   return "empty";
 }
 
-function empty_ok(){
+function empty_ok() {
   document.getElementById('empty-warning').style.visibility = "hidden";
 }
 
